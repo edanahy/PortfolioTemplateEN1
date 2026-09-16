@@ -1,7 +1,8 @@
+@import url("./theme.css");
 
 body {
-    background-color: #4a7a6e;
-    font-family: Arial, sans-serif;
+    background-color: var(--color-primary);
+    font-family: var(--font-body);
     margin: 20px;
 }
 
@@ -15,13 +16,15 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 75%;
-    background: rgba(74, 122, 110, 0.5);
+    background: var(--color-bg-overlay);
     z-index: 1000;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    color: white;
+    color: var(--color-text-on-dark);
+    border-radius: var(--radius);
 }
 
 .header .name {
@@ -37,7 +40,7 @@ body {
 
 .header .navbar a {
     text-decoration: none;
-    color: white;
+    color: var(--color-text-on-dark);
     padding: 10px;
 }
 
@@ -46,11 +49,11 @@ body {
 /* ************************** */
 
 .home {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 0 10%;
-    color: white;
+    padding: 6rem 10% 2rem;
+    color: var(--color-text-on-dark);
 }
 
 .home-content {
@@ -62,16 +65,47 @@ body {
     font-size: 56px;
     font-weight: 700;
     line-height: 1.2;
-    background: rgba(74, 122, 110, 0.5);
+    background: var(--color-bg-overlay);
     padding: 5px;
+    border-radius: var(--radius);
 }
 
 .home-content p {
     position: relative;
     font-size: 1.5em;
     margin: 20px 0 40px;
-    background: rgba(74, 122, 110, 0.5);
+    background: var(--color-bg-overlay);
     padding: 5px;
+    border-radius: var(--radius);
+}
+
+.socials {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    width: fit-content;
+    background: var(--color-bg-overlay);
+    padding: 10px 15px;
+    border-radius: var(--radius);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text-on-dark);
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.social-link:hover {
+    color: var(--color-accent);
+}
+
+.social-link svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
 }
 
 /* ************************************* */
@@ -85,19 +119,20 @@ body {
 
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(3, 2fr);
-    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: stretch;
 }
 
 .project-card {
     padding: 5px;
     margin: 5px;
-    background-color: #e0a66a;
+    background-color: var(--color-accent);
+    border-radius: var(--radius);
     text-align: center;
 }
 
 .project-link {
-    color: #4d3a2c;
+    color: var(--color-text-muted);
 }
 
 .project-title {
@@ -115,6 +150,67 @@ body {
 .project-img {
     display: block;
     width: 100%;
-    height: calc(27vw);
+    aspect-ratio: 4 / 3;
     object-fit: cover;
+    border-radius: calc(var(--radius) - 4px);
+}
+
+/* ***************************** */
+/* Responsive: tablet and mobile */
+/* ***************************** */
+
+@media (max-width: 900px) {
+    .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home-content h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        width: 92%;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        text-align: center;
+        padding: 8px;
+    }
+
+    .header .name {
+        font-size: 1.1em;
+    }
+
+    .header .navbar {
+        font-size: 1em;
+        gap: 10px;
+    }
+
+    .home {
+        padding: 7rem 6% 2rem;
+    }
+
+    .home-content h1 {
+        font-size: 30px;
+    }
+
+    .home-content p {
+        font-size: 1.1em;
+    }
+
+    .social-link {
+        font-size: 1em;
+    }
+
+    .social-link svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .portfolio {
+        grid-template-columns: 1fr;
+        margin-inline: 0.5rem;
+    }
 }
