@@ -104,11 +104,9 @@ left sidebar) to make the changes for you. For example:
 
 Things to personalize:
 
-- [ ] Your name, replacing `FIRSTNAME LASTNAME` everywhere it appears
-      (`index.html`'s header, hero text, and `<title>` tags).
+- [ ] Your name, replacing `FIRSTNAME LASTNAME` everywhere it appears.
 - [ ] Your own header/banner image, replacing `images/header.jpg`.
-- [ ] Your LinkedIn and GitHub links in `index.html`'s social box (search
-      for `your-username`).
+- [ ] Your LinkedIn and GitHub links in `index.html`'s social box.
 - [ ] Confirm you have the rights to publish any images you use — swap out
       any placeholder/stock images that aren't yours.
 
@@ -216,7 +214,7 @@ an embedded video, or a code sample.
 The easiest way is to ask your AI assistant. Something like:
 
 > Add a new project page for "Project 4: <name>". Here's my description:
-> <a paragraph about what I built and learned>. My hero image is
+> [*a paragraph about what I built and learned*]. My hero image is
 > `images/project04.png`. Follow the pattern in AGENTS.md.
 
 Under the hood, that means: copy `template.html` to `project04.html`, fill
